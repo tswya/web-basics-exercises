@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+    <link type="text/css" rel="styleSheet"  href="css/index.css" />
+</head>
+<body>
+    <div id="mask">
+        <!--图片-->
+        <img :src="imgArr[index]" alt=""/>
+        <!--左箭头-->
+        <a href="javascript:void(0)" v-show="index!=0" class="left" @click="prev"><img src="images/prev.png" alt=""></a>
+        
+        <!--右箭头-->
+        <a href="javascript:void(0)" v-show="index<imgArr.length-1" class="right" @click="next"><img src="images/next.png" alt=""></a>
+    </div>
+    <!-- 1.开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#mask',
+            data:{
+                imgArr:[
+                "images/1.jpg",
+                "images/2.jpg",
+                "images/3.jpg",
+                "images/4.jpg",
+                ],
+                index:0
+            },
+            methods:{
+                prev:function(){
+                    
+                    this.index--;
+                    
+                },
+                next:function(){
+                    
+                    this.index++;
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

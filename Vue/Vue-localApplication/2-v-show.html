@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+    <link type="text/css" rel="styleSheet"  href="css/index.css" />
+</head>
+<body>
+    <div id='app'>
+        <input type="button" value="switch" @click="changeIsShow">
+        <input type="button" value="累加年龄" @click="addAge">
+        <!-- <img src='img/emoji.png' v-show='true' width="100px"> -->
+        <img src='img/emoji.png' v-show='isShow'>
+        <img src='img/emoji2.png' v-show='age>=19'>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+                el:'#app',
+                data:{
+                    isShow:false,
+                    age:17
+                },
+                methods:{
+                    changeIsShow:function(){
+                        this.isShow = !this.isShow
+                    },
+                    addAge:function(){
+                        this.age++;
+                    }
+                }
+        });
+    </script>
+</body>
+</html>

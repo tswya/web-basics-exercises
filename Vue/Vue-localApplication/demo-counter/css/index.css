@@ -1,0 +1,33 @@
+/*picSwitch*/
+body{
+    background-color: lightblue;
+}
+#mask {
+    
+    /*border: 1px solid white;*/
+    position: relative;
+    width: 700px;
+    height: 400px;
+    margin: 100px auto;
+}
+#mask img{
+    width: 700px;
+    height: 400px;
+    
+}
+#mask .left img{
+    position: absolute;
+    top: 150px;
+    left: -20px;
+    width: 100px;
+    height: 100px;
+    
+}
+#mask .right img{
+    position: absolute;
+    top: 150px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    
+}
