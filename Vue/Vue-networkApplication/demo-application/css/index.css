@@ -1,0 +1,65 @@
+body{
+    background-color: lightgrey;
+}
+#app{
+    text-align: center;
+    
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.search_form{
+    width:640px;
+    margin:100px auto 0;
+}
+.logo img{
+    display:block;
+    margin:0 auto;
+}
+.form_group{
+    width:640px;
+    height:40px;
+    margin-top:45px;
+}
+.input_txt{
+   width:538px;
+   height:38px;
+   padding:0px;
+   float:left;
+   border:1px solid #41a1cb;
+   outline:none;
+   text-indent:10px;
+}
+
+.input_sub{
+    width:100px;
+    height:40px;
+    border:0px;
+    float: left;
+    background-color: #41a1cb;
+    color:#fff;
+    font-size:16px;
+    outline:none;
+    cursor: pointer;
+    position: relative;
+}
+
+.weather_list{
+    float: left;
+    margin: 20px auto;
+    list-style-type: none;
+    color:#fff;
+}
+.weather_list li {
+    float: left;
+    margin: 10px 10px;
+}
+.iconfont{
+    font-size: 20px;
+    
+}
+.info-type, .info-temp, .info-date{
+    margin-bottom: 10px;
+}

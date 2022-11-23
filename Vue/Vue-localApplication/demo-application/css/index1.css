@@ -1,0 +1,60 @@
+body{
+    background-color: lightgray;
+}
+
+#todoapp{
+    margin: 100px 200px;
+    
+    padding-left: 300px;
+}
+h1{
+    width: 300px;
+    text-align: center;
+}
+input{
+    height: 40px;
+    width: 300px;
+    border:0;
+    border: 1px solid gray;
+    
+}
+.main ul{
+    list-style-type: none;
+    list-style: none;
+    padding: 0;
+
+    font-size: 0;
+    
+}
+.main ul li{
+    width: 304px;
+    font-size: 10px;
+    border: 1px solid gray;
+    height: 40px;
+    background-color: white;
+    border-top: 0;
+    
+}
+.view button{
+    float: right;
+    display: none;
+    
+    height: 20px;
+    background-color: white;
+}
+.todo-list li:hover button{
+    display: block;
+}
+.footer{
+    margin-top: 0;
+    width: 304px;
+    background-color: white;
+    border: 1px solid gray;
+    border-top: 0;
+}
+.footer button{
+    float: right;
+    background-color: white;
+    border: none;
+    
+}

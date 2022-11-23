@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记事本</title>
+    <link type="text/css" rel="styleSheet"  href="css/index1.css" />
+</head>
+<body>
+    <!-- 主体区域 -->
+    <section id="todoapp">
+        <!-- 输入表框 -->
+        <header class="header">
+            <h1>记事本</h1>
+            <input autofocus="autofocus" autocomplete="off" placeholder="请输入任务" class="new-todo" v-model="inputValue" @keyup.enter="add">
+        </header>
+        <!-- 列表区域 -->
+        <section class="main">
+            <ul class="todo-list">
+                <li class="todo" v-for="(item, index) in lists">
+                    <div class="view">
+                        <span>{{ index+1 }}.</span>
+                        <label>{{ item }}</label>
+                        <button class="destroy" @click="remove(index)">×</button>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- 统计和清空 -->
+        <footer class="footer" v-show="lists.length != 0">
+            <span class="todo-count"  v-show="lists.length != 0">
+                <strong>{{ lists.length }}</strong> items left
+            </span>
+            <button @click="clear"  v-if="lists.length != 0">Clear</button>
+        </footer>
+        <!-- 底部 -->
+    </section>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+       var app = new Vue({
+        el:"#todoapp",
+        data:{
+           lists:['code','eat','walk'],
+           inputValue:'study',
+        },
+        methods:{
+            add:function(){
+                this.lists.push(this.inputValue);
+            },
+            remove:function(index){
+                this.lists.splice(index,1)
+            },
+            clear:function(){
+                this.lists = []
+            }
+
+        },
+       });
+    </script>
+</body>
+</html>
