@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 浮点数 运算
+        console.log(0.1+0.2);  //0.30000000000000004
+        console.log(0.07 * 100);  //7.000000000000001
+
+        var num = 0.1 + 0.2;
+        console.log(num == 0.3); 
+
+        //递增/递减
+        var a = 10;
+        a++; // a=a+1; 11
+        console.log(++a + 10); //22=12+10
+        ++a; //13
+        console.log(a); //13
+
+            //后置递增
+            var num = 10;
+            console.log(num++ + 10); //20=10+10
+            console.log(num) //11
+
+            var c = 10;
+            c++;  //11
+            var d = c++ + 2;  //11+2
+            console.log(d)  //13
+
+            var e = 10;
+            var f = e++ + ++e;  //10, 11; 12; 10+12=22
+            console.log(f);  //22
+
+        // 比较运算符
+        console.log(18 == 18);  //true
+        console.log(18 == '18');  //true
+
+        console.log(18 === '18');  //false
+
+        // 逻辑运算符
+        console.log(3 > 5 && 3 > 2); //false
+        console.log(3 > 5 || 3 > 2);  //true
+        console.log(!true); //false
+
+        // 短路运算
+        console.log(123 && 234);  //234
+        console.log(0 && 123);  //0
+        console.log(0 && 123+1 && 123*234); //0
+        console.log('' && 123+1 && 123*234); //''
+
+        console.log(123 || 234);  //123
+        console.log(null || 234);  //234
+
+        var num = 0;
+        console.log(123 || num++);
+        console.log(num);  //0
+
+        // 赋值运算符
+        var d = 10;
+        // d += 2;  //12
+        // d *= 2;  //20
+        d %= 6;  //4
+        console.log(d);
+
+        console.log(4 >= 6 || 'people' != 'human' && !(12 * 2 == 144) && true); //true
+        // ||前为false，||和&&中间为true，!(12 * 2 == 144)为true
+
+        var c = 2 === '2';
+        console.log(c); //false
+
+        var e = !c || d && a;
+        console.log(d);  //4
+        console.log(a);  //13
+        console.log(e);  //true
+        var f = d && a;
+        console.log(f);  //13
+
+        var e = c || d && a;
+        console.log(e);  // 13
+
+        // 三元表达式
+        var num = 10;
+        var result = num > 5 ? 'yes' : 'no';
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

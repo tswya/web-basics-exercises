@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识Vue</title>
+    <!-- 引入Vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+    
+</head>
+<body>
+    <div id="root">
+        <h1>Hello, {{ name }}!</h1> 
+    </div>
+
+
+    <script type="text/javascript">
+        Vue.config.productionTip = false; //阻止 vue 在启动时生成生产提示；失效！在js中修改
+
+        //创建Vue实例
+        new Vue({
+            el:'#root',  //element:指定当前Vue实例与div容器建立联系，值通常为css选择器字符串/document.getElementById('root')
+            //data用于存储数据，数据供el指定的容器所使用，值暂时先写成一个对象。
+            data:{
+                name:'Jack',
+
+            },  
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 案例1：判断闰年与否
+        /* var year = prompt('请输入年份：');
+        if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+            alert(year + '年是闰年')
+        } else {
+            alert(year + '年是平年')
+        } */
+
+        // 案例2：判断是否中奖
+        /* var yourName = prompt('请输入您的姓名：');
+        if (yourName == '小明'){
+            alert('中奖啦！')
+        } else {
+            alert('没中奖!')
+        } */
+
+        // 案例3：判断成绩级别
+        /* var grade = prompt('请输入你的成绩：');
+        if (grade >= 90) {
+            alert('A');
+        } else if ( grade >= 80) {
+            alert('B');
+        } else if ( grade >= 70) {
+            alert('C');
+        } else if ( grade >= 60) {
+            alert('D');
+        } else {
+            alert('E');
+        } */
+
+        // 案例4：数字补0
+        /* var time = prompt('请输入 0~59 之间的一个数字：')
+        var num2 = time < 10 ? "0" + time : time;
+        alert(num2); */
+
+        // 案例5：switch
+        /* var fruit = prompt('请输入查询的水果：');
+        switch(fruit) {
+            case '苹果':
+                alert('3.5元/斤');
+                break;
+            case '榴莲':
+                alert('20元/斤');
+                break;
+            default:
+                alert('没有该水果！');
+        } */
+
+        // 练习1
+        var time = prompt('请输入时间：');
+        if (time >= 23) {
+            alert('深夜好')
+        } else if (time >= 18) {
+            alert('傍晚好')
+        } else if (time >= 12) {
+            alert('中午好')
+        } else if (time >= 6) {
+            alert('早上好')
+        } else {
+            alert('深夜好')
+        };
+            // switch
+        var time = prompt('请输入时间：');
+        switch(time){
+            case 12:
+                alert('中午好');
+                break;
+            case 18:
+                alert('傍晚好');
+                break;
+            case 23:
+                alert('深夜好');
+                break;
+        }
+        // 练习2
+        var num1 = prompt('输入第一个数字：');
+        var num2 = prompt('输入第二个数字：');
+        if (num1 > num2) {
+            alert(num1);
+        } else {
+            alert(num2);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
