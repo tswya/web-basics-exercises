@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* function fn() {
+            console.log(arguments);
+            console.log(arguments.length);
+            console.log(arguments[2]);
+            console.log(arguments[3]);
+
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        fn(1,2,3,4); */
+
+        // 利用函数求任意个数的最大值
+        /* function getMax() {
+            var max = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        console.log(getMax(1,2,3));
+        console.log(getMax(6,2,3,8,0)); */
+
+        // 翻转任意数组
+        /* function reverse(arr) {
+            var newArr = [];
+            for (var i = arr.length-1; i >= 0; i--){
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+        var arr1 = reverse([1,2,3,4,5,6,7]);
+        console.log(arr1); */
+
+        // 对数组排序--冒泡排序
+        /* function sort(arr) {
+            for (var i = 0; i < arr.length-1; i++){
+                for (var j = 0; j < arr.length-i-1; j++){
+                    if (arr[j] > arr[j+1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var arr1 = sort([2,4,7,5,2,1]);
+        console.log(arr1); */
+
+        // 判断闰年
+        /* function isRunYear(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+        console.log(isRunYear(2000));
+
+        // 函数相互调用
+        function fn1(){
+            console.log(11);
+        }
+        function fn2(){
+            console.log(22);
+            fn1();
+            console.log(22);
+        }
+        fn1();
+        fn2();
+
+        // 输出2月份天数
+        function backYear(){
+            var year = prompt('输入年份：');
+            if (isRunYear(year)) {
+                alert('29天');
+            } else {
+                alert('28天');
+            }
+        }
+        backYear(); */
+
+        // 作用域链
+        /* function f1(){
+            var num = 123;
+
+            function f2() {
+                console.log(num);
+            }
+            f2();
+        }
+        var num = 234;
+        f1();
+
+        var num = 10;
+        fun();
+        function fun(){
+            console.log(num);
+            var num = 20;
+        } */
+
+        /* // 构造函数
+        function Star(uname, age, gender){
+            this.name = uname;
+            this.age = age;
+            this.gender = gender;
+            this.song = function(song){
+                console.log(song);
+            }
+        }
+        // 对象
+        var list1 = new Star('小红', 18, '女'); //调用函数返回一个对象
+        console.log(list1);
+
+        console.log(typeof list1);
+        list1.song('冰雨')
+
+        // 遍历对象
+        var obj = {
+            name: '小红',
+            age: 18,
+            gender: 'female',
+            fn: function (){
+
+            }
+        }
+        for (k in obj) {
+            console.log(k);
+            console.log(obj[k]);
+        } */
+        /* console.log(Math.max(1,2,3));
+        console.log(Math.max(1,2,'i'));
+        console.log(Math.max()); */
+
+        // 封装自己的数学对象
+        var myMath = {
+            PI: 3.1415,
+            max: function(){
+                var max = arguments[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i]
+                    }
+                }
+                return max;
+            },
+            min: function(){
+                var min = arguemnts[0];
+                for (var i = 1; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i]
+                    }
+                }
+                return min;
+            }
+        }
+        console.log(myMath.PI);
+        console.log( myMath.max(1,2,3,7));
+
+        console.log(Math.floor(1.7));
+        console.log(Math.ceil(1.7));
+        console.log(Math.ceil(1.1));
+        console.log('-----------');
+        console.log(Math.round(1.7));
+        console.log(Math.round(1.5));
+        console.log(Math.round(1.1));
+        console.log(Math.round(-1.1));
+        console.log(Math.round(-1.5));
+        console.log(Math.round(-1.7));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

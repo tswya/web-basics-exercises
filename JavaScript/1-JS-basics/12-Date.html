@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* var date = new Date(2022, 10, 1);
+        console.log(date);
+        var date1 = new Date('2022-10-1 8:8:8');
+        console.log(date1);
+        var date2 = new Date('2022/10/1 8:8:8');
+        console.log(date2);
+
+        var date3 = new Date();
+        console.log(date3.getFullYear());
+        console.log(date3.getMonth() + 1);
+        console.log(date3.getDay()); */
+        
+        // 格式化年月日星期
+        /* var year = date3.getFullYear();
+        var month = date3.getMonth() + 1;
+        var date = date3.getDate();
+        var day = date3.getDay();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var str = year + '年' + month + '月' + date + '日 ' + arr[day];
+        console.log(str); */
+
+        // 格式化时分秒
+        /* function getTimer(){
+            var time = new Date();
+            var h = time.getHours();
+            var m = time.getMinutes();
+            var s = time.getSeconds();
+            h = h < 10? '0' + h : h;
+            m = m < 10? '0' + m : m;
+            s = s < 10? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTimer()); */
+
+        // 获取毫秒数
+            // valueOf()
+            var date = new Date();
+            console.log(date.valueOf());
+            console.log(date.getTime());
+            var date1 = +new Date();
+            console.log(date1);
+            console.log(Date.now());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

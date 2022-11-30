@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* var arr = new Array(); // create an empty array
+
+        var arr1 = new Array(2); // 数组长度为2，里面有2个空的数组元素
+        var arr2 = new Array(2,3); // 等价于[2,3]，里面有2个数组元素 2和3
+
+        // 检测是否为数组
+        var arr = [];
+        var obj = {};
+        console.log(arr instanceof Array);
+        console.log(obj instanceof Array);
+
+        console.log(Array.isArray(arr));
+
+        // 添加数组元素
+        var arr = [1,2,3];
+            // push
+            arr.push(4,5);  //返回数组长度
+            // console.log(arr.push(4,5));
+            console.log(arr);
+
+            arr.unshift(0)
+            console.log(arr);
+        // 删除数组元素
+            arr.pop();
+            console.log(arr);
+            console.log(arr.pop());
+
+            arr.shift()
+            console.log(arr); */
+
+        // 案例：筛选数组
+        /* var arr = [1500, 2000, 1200, 2100, 1800];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++){
+            if (arr[i] < 2000) {
+                newArr.push(arr[i]);
+            }
+        }
+        console.log(newArr);
+
+            // 反转数组
+            arr.reverse();
+            console.log(arr); */
+
+        // 数组排序
+        /* var arr = [1,4,7,22,77,56,22];
+        arr.sort(function(a,b){
+            // return a - b;  // 升序的顺序排列
+            return b - a; // 降序的顺序排序
+        })
+        console.log(arr);
+        var arr = [1,4,7,22,77,56,22];
+        console.log(arr.indexOf(22));
+        console.log(arr.lastIndexOf(22)); */
+
+        // 案例：数组去重
+        /* var arr = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b'];
+        
+        function unique(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) == -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+        var demo = unique(arr);
+        console.log(demo); */
+
+        /* var arr = [1,2,3];
+        var arr1 = arr.toString();
+        console.log(arr1);
+
+        var arr2 = arr.join('|')
+        console.log(arr2); */
+
+        // 基本包装类型
+        /* var str = 'andy anna';
+        var temp = new String('andy');
+        str = temp;
+        temp = null;
+
+        // 自变量的不可变性
+        var str = 'andy anna';
+        console.log(str.indexOf('n', 2)); */
+
+        // 案例：返回字符位置
+        /* var str = 'abcoefsgesogpssoopaspspop';
+        function findLetter(str, letter){
+            var num = 0;
+            var index = str.indexOf(letter);
+            while (index !== -1) {
+                console.log(index);
+                num ++;
+                index = str.indexOf(letter, index + 1);
+            }
+            return '循环次数：' + num;
+        }
+        // findLetter(str, 'o');
+        console.log(findLetter(str, 'o'));
+
+        // 根据位置返回字符
+        console.log(str.charAt(3));
+        console.log(str.charCodeAt(3)); */
+
+        /* var arr = ['a', 'b', 'd', 'a', 'c', 'a'];
+        // console.log(arr.indexOf('a',1));
+        var index = arr.indexOf('a');
+        // console.log(index);
+        while (index !== -1) {
+            console.log(index);
+            index = arr.indexOf('a', index + 1);
+            // console.log(index);
+        } */
+
+        // 判断是否有该属性
+            /* var p = {
+                age: 10
+            }
+            if(p['age']) {
+                console.log('有');
+            } else {
+                console.log('无');
+            } */
+            
+            // 统计字符串字母数量
+
+            /* var str = 'asdeddsfsgdhgjysdahtkjfs';
+            var o = {};
+            for (var i = 0; i < str.length; i++){
+                var chars = str.charAt(i);
+                if (o[chars]) {
+                    o[chars]++;
+                } else {
+                    o[chars] = 1;
+                }
+            }
+            console.log(o);
+            console.log(str.charAt(1)); 
+
+                // 遍历对象
+                var max = 0;
+                var ch = '';
+                for (var k in o) {
+                    // k 属性名，o[k] 属性值
+                    if(o[k] > max) {
+                        max = o[k];
+                        ch = k;
+                    }
+                }
+                console.log(max);
+                console.log(ch); */
+            
+            // 替换字符 
+            /* var str = 'asdeddsfsgdhgjysdahtkjfs';
+            while (str.indexOf('a') != -1) {
+                str = str.replace('a','*')
+            }
+            console.log(str); */
+
+            var str = 'a, b, c, d';
+            var arr = str.split(',');
+            console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //for loop
+        for (var i = 1; i <= 100; i++) {
+            console.log('hello');
+        };        // 顺序：i=1 → i<=100 → 'hello' → i++ → i<=100 → 'hello'
+    
+        // 遍历数组
+        var arr = [1,2,3,4,5,6,7];
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        // 案例1：
+        var arr1 = [2,6,1,7,4];
+        var sum = 0;
+        for (var i=0; i<arr1.length; i++){
+            sum += arr1[i];
+        }
+        var aver = sum / arr1.length;
+        console.log(aver, sum);
+
+        // 案例2：
+        var arr2 = [2,6,1,77,52,25,7];
+        var max = arr2[0];
+        var min = arr2[0];
+        for (var i = 1; i < arr2.length; i++){
+            if(max < arr2[i]) {
+                max = arr2[i];
+            }
+        };
+        console.log('数组的最大值是：' + max);
+        for (var i = 1; i < arr2.length; i++){
+            if(min > arr2[i]) {
+                min = arr2[i];
+            }
+        };
+        console.log('数组的最小值是：' + min);
+
+        // 案例3：
+        var arr3 = ['red','green','blue','pink'];
+        var str = '';
+        var sep = '||';
+        for (var i = 0; i < arr3.length; i++){
+            str += arr3[i] + sep;
+        }
+        console.log("'"+str+"'");
+
+        // 增加数组元素
+        var arr4 = ['red','green','blue','pink'];
+        arr4.length = 7;
+        console.log(arr4);  // empty in arr4; arr4[5] = undefined
+                //修改索引号
+        arr4[arr4.length + 1] = 'purple';
+        console.log(arr4); 
+
+        // 案例4：追加数组元素
+        var arr5 = [];
+        for(var i=0;i<10;i++) {
+            arr5[i]=i+1;
+        };
+        console.log(arr5);
+
+        // 案例5：筛选数组
+            // 方法1：
+        /* var arr6 = [2,0,6,1,77,0,52,0,25,7];
+        var arr7 = [];
+        var j = 0;
+        for (var i = 0; i < arr6.length; i++) {
+            if (arr6[i] >= 10) {
+                // 新数组索引号从0开始 依次递增
+                arr7[j] = arr6[i];
+                j++;
+            }
+        }
+        console.log(arr7); */
+            // 方法2：
+        /* var arr6 = [2,0,6,1,77,0,52,0,25,7];
+        var arr7 = [];
+        console.log(arr7.length);
+        for (var i = 0; i < arr6.length; i++) {
+            if (arr6[i] >= 10) {
+                // 新数组索引号从0开始 依次递增
+                arr7[arr7.length] = arr6[i];
+            }
+        }
+        console.log(arr7); */
+
+        // 案例6：删除指定数组元素
+        /* var arr8 = [2,0,6,1,77,0,52,0,25,7];
+        var arr9 = [];
+        for (var i = 0; i < arr8.length; i++) {
+            if (arr8[i] != 0) {
+                arr9[arr9.length] = arr8[i];
+            }
+        }
+        console.log(arr9); */
+
+        // 案例7：翻转数组
+        /* var arr10 = [1,2,3,4,5,6];
+        var arr11 = [];
+        for (var i = arr10.length-1; i>=0; i--){
+            arr11[arr11.length] = arr10[i];
+        }
+        console.log(arr11); */
+
+        // 案例8：数组排序（冒泡排序）
+        var arr = [5,4,3,2,1]
+        for (var i = 0; i <= arr.length-1; i++){  // 外层循环管趟数
+            for (var j = 0; j<=arr.length-i-1; j++){  // 内层管交换次数
+                if(arr[j]>arr[j+1]){
+                    var temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

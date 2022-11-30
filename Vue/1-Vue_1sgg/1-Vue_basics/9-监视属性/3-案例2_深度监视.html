@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气案例_深度监视</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <!-- methods方法 -->
+    <div id="root">
+       <h2>今天天气{{ info }}</h2>
+       <button @click="changeWeather">Switch</button>
+       <!-- 方法是简单语句时，可以写在""内 -->
+       <!-- <button @click="isHot = !isHot">Switch</button> -->
+       <hr/>
+       <h3>a的值：{{numbers.a}}</h3>
+       <button @click="numbers.a++">点我a+1</button>
+    </div>    
+    <script type="text/javascript">
+
+        const vm = new Vue({
+            el:'#root',
+            data:{
+                isHot:true,
+                numbers:{
+                    a:1,
+                    b:1
+                }
+            },
+            methods:{
+                changeWeather(){
+                    this.isHot = !this.isHot
+                }
+            },
+            computed:{
+                info(){
+                    return this.isHot? '炎热':'凉爽'
+                }
+            },
+            watch:{
+                isHot:{
+                    
+                    // handler什么时候调用？当isHot发生改变时调用。
+                    handler(newValue,oldValue){
+                        console.log('isHot被修改了',newValue,oldValue);
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

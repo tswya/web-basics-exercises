@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* function getSum(num1,num2){
+            var sum = 0;
+            for (var i = num1; i <= num2; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        getSum(5,10);
+        getSum(1,100); */
+
+        // 形参实参个数不匹配
+        /* function getSum(num1,num2){
+            console.log(num1 + num2);
+        }
+        getSum(1,2);
+        getSum(1,2,3);
+        getSum(1); */
+
+        // 函数的返回值
+        /* function getSum(num1,num2){
+            return num1 + num2;
+        }
+        getSum(1,2);
+        console.log(getSum(1,2));
+         */
+        function getMax(num1, num2) {
+            /* if (num1 > num2) {
+                return num1;
+            } else {
+                return num2;
+            } */
+            return num1 > num2 ? num1 : num2; // 三元表达式
+        };
+        // console.log(getMax(3,9)); 
+
+        // 练习1 求数组最大值
+        /* function getArrMax(Arr) {
+            var max = Arr[0];
+            for (var i = 1; i < Arr.length; i++) {
+                if (Arr[i] > max) {
+                    max = Arr[i]
+                }
+            }
+            return max;
+        }
+        console.log(getArrMax([1,5,83,24,5,90]));
+        var re = getArrMax([1,5,83,24,5,90]);
+        console.log(re); */
+
+        /* function getMax(num1, num2) {
+            if (num1 > num2) {
+                return [num1, num2];
+            } else {
+                return [num1, num2];
+            } 
+         
+        };
+        console.log(getMax(3,9));  // return返回值以最后一个为准。
+        console.log(getMax(9,3));  */
+
+        /* function getMax(num1, num2) {
+            num1 > num2 ? num1 : num2; // 无return 返回undefined
+        };
+        console.log(getMax(3,9));  */
+
+        var num1 = prompt('数字1');
+        var num2 = prompt('数字2');
+        function getSum(num1, num2) {
+            num1 = parseFloat(num1);
+            num2 = parseFloat(num2);
+            return num1 + num2; // 无return 返回undefined
+        };
+        var re = getSum(num1,num2)
+        alert(re); 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

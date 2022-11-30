@@ -10,7 +10,17 @@
 <body>
     <div id="root">
         <h2>welcome to {{ name }}</h2>
-        <input type="text" placeholder="按下回车提示输入" @keyup.enter="showInfo">
+        <!-- <input type="text" placeholder="按下回车提示输入" @keyup.enter="showInfo"> -->
+        <!-- <input type="text" placeholder="按下回车提示输入" @keyup="showInfo"> -->
+        
+        <!-- <input type="text" placeholder="按下回车提示输入" @keyup.caps-lock="showInfo"> -->
+        <!-- <input type="text" placeholder="按下回车提示输入" @keydown.tab="showInfo"> -->
+        <!-- <input type="text" placeholder="按下回车提示输入" @keyup.tab="showInfo"> -->
+
+        <!-- <input type="text" placeholder="按下回车提示输入" @keyup.ctrl="showInfo"> -->
+        <!-- <input type="text" placeholder="按下回车提示输入" @keydown.ctrl="showInfo"> -->
+
+        <input type="text" placeholder="按下回车提示输入" @keyup.ctrl.y="showInfo">
     </div>
 </body>
     <script>
@@ -21,8 +31,14 @@
             },
             methods:{
                 showInfo(e){
-                    console.log(e.target.value)
+                    console.log(e.target.value);
+                    // console.log(e.key, e.keyCode);
                 }
+
+                /* showInfo(e){
+                    if(e.keyCode !== 13) return
+                    console.log(e.target.value)
+                } */
             }
         });
     </script>

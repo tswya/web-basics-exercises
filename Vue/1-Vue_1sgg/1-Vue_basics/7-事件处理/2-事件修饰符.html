@@ -44,6 +44,9 @@
         <div class="demo1" @click="showInfo">
             <!-- <button @click="showInfo">Click2</button> -->
             <button @click.stop="showInfo">Click2</button>
+            <!-- 修饰符可以连续写 -->
+            <!-- <a href="http://www.bing.com" @click.stop.prevent="showInfo">Click</a> -->
+
         </div>
 
         <!-- 事件只触发一次 -->

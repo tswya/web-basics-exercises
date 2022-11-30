@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //for loop
+        /* for (var i = 1; i <= 100; i++) {
+            console.log('hello');
+        };        // 顺序：i=1 → i<=100 → 'hello' → i++ → i<=100 → 'hello' */
+    
+        // 遍历数组
+        /* var arr = [1,2,3,4,5,6,7];
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        } */
+
+        // 案例1：
+        /* var arr1 = [2,6,1,7,4];
+        var sum = 0;
+        for (var i=0; i<arr1.length; i++){
+            sum += arr1[i];
+        }
+        var aver = sum / arr1.length;
+        console.log(aver, sum); */
+
+        // 案例2：
+        /* var arr2 = [2,6,1,77,52,25,7];
+        var max = arr2[0];
+        var min = arr2[0];
+        for (var i = 1; i < arr2.length; i++){
+            if(max < arr2[i]) {
+                max = arr2[i];
+            }
+        };
+        console.log('数组的最大值是：' + max);
+        for (var i = 1; i < arr2.length; i++){
+            if(min > arr2[i]) {
+                min = arr2[i];
+            }
+        };
+        console.log('数组的最小值是：' + min); */
+
+        // 案例3：
+        /* var arr3 = ['red','green','blue','pink'];
+        var str = '';
+        var sep = '||';
+        for (var i = 0; i < arr3.length; i++){
+            str += arr3[i] + sep;
+        }
+        console.log("'"+str+"'"); */
+
+        // 案例4：
+        /* var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum); */
+
+        // 案例5：1-100之间所有数平均值
+        /* var aver = 0;
+        var sum = 0;
+        for (var i = 1; i <= 100; i++){
+            sum += i;
+        }
+        aver = sum / 100;
+        console.log(aver); */
+        
+        // 案例6：1-100之间所有偶数和奇数数的和
+        /* var odd = 0;
+        var even = 0;
+        for (var i = 1; i <= 100; i++){
+            if (i % 2 == 0) {
+                even += i
+            } else {
+                odd += i;
+            }
+        }
+        console.log(odd, even); */
+
+        // 案例7： 1-100之间所有能被3整除的数字的和
+        /* var num = 0;
+        for (var i = 1; i <= 100; i++){
+            if (i % 3 == 0) {
+                num += i;
+            }
+        }
+        console.log(num); */
+
+        // 案例8：求学生成绩
+        /* var num = prompt('请输入班级总人数');
+        
+        var sum = 0;
+        for (var i = 1; i <= num; i++){
+            var grade = prompt('请输入第' + i + '一个学生的成绩：');
+            sum += parseFloat(grade);
+        }
+        alert('班级总成绩：' + sum); */
+
+        // 案例9：一行打印5个星星
+            // 追加字符串
+        /* var str = '';
+        for (var i = 1; i <= 5; i++) {
+            str = str + '⭐';
+        }
+        console.log(str); */
+
+        // 案例10
+            // 1
+        /* for (var i = 1; i <= 5; i++) {
+            var str = '';
+            for (var j = 1; j <= 5; j++) {
+                str = str + '⭐';
+            }
+            console.log(str); 
+        } */
+            // 2
+        /* var str = '';    
+        for (var i = 1; i <= 5; i++) {
+            for (var j = 1; j <= 5; j++) {
+                str = str + '⭐';
+            }
+            str = str + '\n'; 
+        }
+        console.log(str); */
+
+        // 案例11  外层循环控制行数，里层循环控制列数
+        /* var col = prompt('输入列数:');
+        var row = prompt('输入行数:');
+        var str = '';
+        for (var i = 1; i <= row; i++) {
+            
+            for (var j = 1; j <= col; j++) {
+                str = str + '⭐';
+            }
+            str = str + '\n'; 
+        }
+        console.log(str); */
+
+
+        // 案例12 打印倒三角形
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = i; j <= 10; j++){ //里层循环打印个数不一样 j=i
+                str += '⭐';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        // 案例13 打印正三角形
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = 10 - i + 1; j <= 10; j++){ //里层循环打印个数不一样 j=i
+                str += '⭐';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        var str = '';
+        for (var i = 1; i <= 10; i++) {
+            for (var j = 1; j <= i; j++){ //里层循环打印个数不一样 j=i
+                str += '⭐';
+            }
+            str += '\n';
+        }
+        console.log(str);
+
+        // 案例14： 打印九九乘法表
+        var str = '';
+        for (var i = 1; i <= 9; i++) {
+            for (var j = 1; j <= i; j++){ //里层循环打印个数不一样 j=i
+                // 1 × 1 = 1;
+                str += j + '×' + i + '=' + i * j + '\t';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
