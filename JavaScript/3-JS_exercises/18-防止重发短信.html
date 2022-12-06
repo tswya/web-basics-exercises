@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        号码：<input type="number">
+        <button class="btn">send</button>
+    </div>
+    <script>
+        var btn = document.querySelector('.btn');
+        var time = 3; //定义剩下的秒数
+        btn.addEventListener('click', function(){
+            btn.disabled = true;
+            var timer = setInterval(function(){
+                if(time == 0){
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = '发送';
+                    time = 3;  //别忘记重设置 time
+                } else{
+                    btn.innerHTML = '还剩' + time + '秒';
+                    time--;
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #style{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+        .change {
+            background-color: pink;
+            width: auto;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button>click</button>
+    <div>111</div>
+    <p>
+        222
+    </p>
+
+    <div id="style">操作样式</div>
+    
+    <div id="style1">操作样式</div>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+
+        btn.onclick = function(){
+            div.innerText = getDate();
+        }
+
+        var p = document.querySelector('p');
+        // p.innerText = getDate();
+
+        function getDate(){
+            var date3 = new Date();
+            var year = date3.getFullYear();
+            var month = date3.getMonth() + 1;
+            var date = date3.getDate();
+            var day = date3.getDay();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var str = year + '年' + month + '月' + date + '日 ' + arr[day];
+            return str;
+        }
+
+        // p.innerHTML = "<strong>今天是：</strong>" + getDate();
+        console.log(p.innerText);
+        console.log(p.innerHTML);
+
+        /* var style = document.getElementById('style');
+        style.onclick = function (){
+            this.style.backgroundColor = 'pink';
+            this.style.width = '300px';
+        } */
+
+        // 通过className更改元素样式
+        var style1 = document.getElementById('style1');
+        style1.onclick = function (){
+            this.className = 'change';
+        }
+    </script>
+</body>
+</html>

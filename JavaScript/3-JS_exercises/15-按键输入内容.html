@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .search {
+            position: relative;
+            width: 178px;
+            margin: 100px;
+        }
+        .con{
+            display: none;
+            top: -40px;
+            width: 171px;
+            border: 1px solid rgba(0,0,0, .2);
+            box-shadow: 0 2px 4px rgba(0,0,0, .2);
+            padding: 5px 0;
+            font-size: 18px;
+            line-height: 20px;
+            color: #333;
+        }
+        .con::before{
+            content:'';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 28px;
+            left: 18px;
+            border: 8px solid #000;
+            border-style: solid dashed dashed;
+            border-color: #fff transparent transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 按下s键，光标锁定input框 -->
+    <!-- <input type="text">
+
+    <script>
+        var ipt = document.querySelector('input');
+        document.addEventListener('keyup',function(e){
+            if(e.keyCode === 83) {
+                ipt.focus();
+            }
+        }) -->
+
+    <!-- 输入内容，显示大字号盒子 -->
+    <div class="search">
+        <div class="con">123</div>
+        <input type="text" placeholder="请输入您的快递单号" class="jd">
+    </div>    
+    <script>
+        var con = document.querySelector('.con');
+        var jd_ipt = document.querySelector('.jd');
+        jd_ipt.addEventListener('keyup',function(){
+            if (this.value != 0) {
+                con.innerText = this.value;
+                con.style.display = 'block';
+            } else {
+                con.style.display = 'none';
+            }
+        })
+        jd_ipt.addEventListener('blur', function(){
+            con.style.display = 'none';
+        })
+        jd_ipt.addEventListener('focus', function(){
+            if(this.value !== '') {
+                con.style.display = 'block';
+            } 
+        })
+    </script>
+    
+</body>
+</html>
