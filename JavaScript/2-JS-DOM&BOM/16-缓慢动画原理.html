@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+        span{
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn400">click400</button>
+    <button class="btn800">click800</button>
+    <!-- <div></div> -->
+    <span></span>
+    <script>
+        /* function animation(obj, target) {
+            
+            var timer = setInterval(function(){
+                if(obj.offsetLeft >= target) {
+                    clearInterval(timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + 5 + 'px';
+                }
+                
+            }, 30);
+        }
+        
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        animation(div, 800);
+        animation(span,1000); */
+
+        // 给不同对象添加不同定时器
+        function animation(obj, target) {
+            // 当不断点击按钮，元素速度会越来越快，因为开启了太多定时器
+                // 解决方案：让元素只有一个定时器执行
+            // 清除以前的定时器
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                
+                // 步长值改为整数，不要出现小数的问题
+                // var step = Math.ceil((target - obj.offsetLeft) / 10);
+                var step = (target - obj.offsetLeft) / 10;
+                step = step > 0? Math.ceil(step) : Math.floor(step);  // 记得赋值 step = ...
+                if(obj.offsetLeft == target) {
+                    clearInterval(obj.timer);
+                } else {
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+                
+            }, 15);
+        }
+        
+        var div = document.querySelector('div');
+        var span = document.querySelector('span');
+        var btn400 = document.querySelector('.btn400');
+        var btn800 = document.querySelector('.btn800');
+        // animation(div, 800);
+        btn400.addEventListener('click', function(){
+            animation(span,400);
+        });
+        btn800.addEventListener('click', function(){
+            animation(span,800);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <a href="http://www.bing.com">bing首页</a>
+    <input type="checkbox" name="" id="" checked>
+
+    <script>
+        $(function(){
+            $("input").change(function(){
+                console.log($(this).prop("checked")); // 返回false 或 true
+            })
+        });
+    </script>
+</body>
+</html>
