@@ -10,12 +10,21 @@
 <body>
     <a href="http://www.bing.com">bing首页</a>
     <input type="checkbox" name="" id="" checked>
-
+    <div index="1" data-index="4">hello</div>
+    <span>123</span>
     <script>
         $(function(){
+            $("a").prop("title", 'hello')
             $("input").change(function(){
                 console.log($(this).prop("checked")); // 返回false 或 true
             })
+            console.log($('div').attr('index', 4));
+
+            // 数据缓存data()
+            $("span").data("uname", "anna");
+            console.log($("span").data("uname"));
+            
+            console.log($('div').data('index'));
         });
     </script>
 </body>
