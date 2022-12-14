@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/template-web.js"></script>
+    <script src="lib/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <script type="text/html" id="tpl-user">
+        <h1>{{name}} --- {{age}}</h1>
+        {{@ test}}
+        <div>
+            {{if flag === 0}}
+            flag的值为0
+            {{/if}}
+        </div>
+        <h3>{{regTime | dateFormat}}</h3>  <!-- regTime相当于dateFormat的实参 -->
+    </script>
+    <script>
+        template.defaults.imports.dateFormat = function(date){  //传递一个形参，接收regTime
+            var y = date.getFullYear();
+            var m = date.getMonth();
+            var d = date.getDate();
+            return y + '-' + m + '-' + d
+        };
+        var data = {
+            name: 'anna',
+            age: 20,
+            test: '<h3>测试</h3>',
+            flag: 0,
+            regTime: new Date(),
+        };
+        var htmlStr = template('tpl-user', data);
+        // console.log( template('tpl-user', data));
+        $("#container").html(htmlStr);
+
+        
+    </script>
+</body>
+</html>

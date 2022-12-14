@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            var obj1 = {};
+            var obj2 = {
+                name: "anna",
+                age: 20,
+                msg: {
+                    gender: "female"
+                }
+            };
+            var obj3 = {
+                id: 1,
+                name: "andy"
+            }
+            $.extend(obj1, obj2);
+            // console.log(obj1);
+
+            console.log(obj2);
+            // $.extend(obj3, obj2);
+            console.log(obj3);  //会覆盖obj3的数据
+            // obj3.msg.gender = "male";
+            // console.log(obj2);
+            // console.log(obj3);
+            
+            $.extend(true, obj3, obj2);
+            obj3.msg.gender = "male";
+            console.log(obj2);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../lib/jquery-3.6.1.min.js"></script>
+    <style>
+        body,html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #angel{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="./angel.gif" alt="" id="angel" />
+
+    <script>
+        
+        $(function(){
+        // 不使用节流实现鼠标跟随
+            /* $(document).on('mousemove',function(e){
+                $('#angel').css({'left': e.pageX + 'px','top': e.pageY + 'px'});
+                console.log(1);
+            }) */
+
+        //使用节流
+            var timer = null;
+            $(document).on('mousemove', function(e){
+                if(timer) {return}
+                timer = setTimeout(function(){
+                    $('#angel').css({'left': e.pageX + 'px','top': e.pageY + 'px'});
+                    console.log(1);
+                    timer = null
+                },16)
+            })
+
+        });
+
+        
+
+    </script>
+</body>
+</html>

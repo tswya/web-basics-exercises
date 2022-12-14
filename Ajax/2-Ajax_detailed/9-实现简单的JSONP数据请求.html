@@ -7,6 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        function success(data) {
+            console.log("测试成功");
+            console.log(data);
+        }
+    </script>
+
+    <script src="https://ajax-base-api-t.itheima.net/api/jsonp?callback=success&name=ls&age=30"></script>
 </body>
 </html>
