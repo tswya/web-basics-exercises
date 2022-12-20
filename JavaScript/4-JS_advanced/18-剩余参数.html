@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sum = (...args) => {
+            let total = 0;
+            args.forEach(item => total += item);
+            return total;
+        };
+        console.log(sum(10,20)); 
+        console.log(sum(20,30,40,50)); 
+
+        let ary = [1, 2, 3];
+        // ...ary  // 1, 2, 3
+        console.log(...ary);    
+        console.log(1, 2, 3);
+
+        let ary1 = [1, 2, 3];
+        let ary2 = [3, 4, 5];
+        let ary3 = [...ary1, ...ary2];
+        // 方法二 
+        ary1.push(...ary2);
+        console.log(ary1);
+
+    </script>
+</body>
+</html>

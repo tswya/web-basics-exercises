@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = 'Window';
+        var object = {
+            name: 'Object',
+            getNameFunc: function() {
+                return function() {
+                    return this.name;
+                }
+            }
+        };
+        console.log(object.getNameFunc()()) //返回Window
+        /* var f = object.getNameFunc();
+        // 类似于
+        var f = function() {
+            return this.name;
+        }
+        匿名函数的this指向window
+        f(); */
+
+        //思考题2：有闭包的产生 闭包函数getNameFunc
+        var object = {
+            name: 'Object',
+            getNameFunc: function() {
+                var that = this;
+                return function() {
+                    return that.name;
+                }
+            }
+        };
+        console.log(object.getNameFunc()())   //返回Object
+        var f = object.getNameFunc();
+        var f = function() {
+            return that.name;
+        };
+        f();
+    </script>
+</body>
+</html>

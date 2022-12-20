@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var regexp = new RegExp(/123/);
+        console.log(regexp);
+
+        var rg = /123/;
+        console.log(rg);
+        console.log(rg.test(123)); //true
+        console.log(rg.test(456));  //false
+        console.log(rg.test('abc'));  //false
+
+        var rg1 = /abc/;
+        console.log(rg1.test('abc')); //true
+        console.log(rg1.test('abcd')); //true
+
+        var rg2 = /^abc$/;
+        console.log(rg2.test('abc')); //true
+        console.log(rg2.test('abcd')); //false
+        console.log(rg2.test('abcabc')); //false
+
+        var rg3 = /[abc]/; //包含a b c其中任何一个，返回true
+        console.log(rg3.test('anna'));  //true
+        console.log('-----------------');
+        var rg4 = /^[abc]$/;
+        console.log(rg4.test('aa')); //false
+        console.log(rg4.test('a'));  //true
+        console.log(rg4.test('b'));  //true
+        console.log(rg4.test('ab'));  //false
+        console.log('-----------------');
+        var rg5 = /^[a-z]$/;
+        console.log(rg5.test('ab')); //false
+        console.log(rg5.test('m')); //true
+        console.log(rg5.test('A')); //false
+        console.log(rg5.test(1)); //false
+        console.log('-----------------');
+        var rg6 = /^[a-zA-Z]$/;
+        console.log(rg6.test('ab')); //false
+        console.log(rg6.test('m')); //true
+        console.log(rg6.test('A')); //true
+        console.log(rg6.test(1)); //false
+        console.log('-----------------');
+        //量词符
+        var reg = /^a*$/;
+        console.log(reg.test('')); //true
+        console.log(reg.test('a')); //true
+        console.log(reg.test('aaa')); //true
+       
+        var reg1 = /^a+$/;
+        console.log(reg1.test('')); //false
+        console.log(reg1.test('a')); //true
+        console.log(reg1.test('aaa')); //true
+
+        var reg2 = /^a?$/;
+        console.log(reg2.test('')); //true
+        console.log(reg2.test('a')); //true
+        console.log(reg2.test('aaa')); //false
+        console.log('--------');
+        var reg3 = /^a{3}$/;
+        console.log(reg3.test('')); //false
+        console.log(reg3.test('a')); //false
+        console.log(reg3.test('aaa')); //true
+        console.log(reg3.test('aaabc')); //false
+        console.log('--------');
+        var reg4 = /^a{3,}$/;
+        console.log(reg4.test('')); //false
+        console.log(reg4.test('a')); //false
+        console.log(reg4.test('aaa')); //true
+        console.log(reg4.test('aaaaa')); //true
+        console.log(reg4.test('aaabc')); //false
+        console.log('--------');
+        var reg4 = /^a{3,5}$/;
+        console.log(reg4.test('')); //false
+        console.log(reg4.test('a')); //false
+        console.log(reg4.test('aaa')); //true
+        console.log(reg4.test('aaaaa')); //true
+        console.log(reg4.test('aaaaaa')); //false
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>click</button>
+    <script>
+        /* class Father {
+            constructor(){
+
+            }
+            money() {
+                console.log('100');
+            }
+        }
+        class Son extends Father {
+
+        }
+        var son = new Son();
+        son.money(); */
+
+        //类的继承
+        /* class Father {
+            constructor(x,y){
+                this.x = x;
+                this.y = y;
+            }
+            sum() {
+                console.log(this.x + this.y);
+            }
+        }
+        class Son extends Father {
+            constructor(x,y) {
+                super(x,y);
+            }
+
+        }
+        var son = new Son(1,2);
+        son.sum(); */
+
+        //调用父类的普通函数
+        /* class Father {
+            sum() {
+                return 77;
+            }
+        }
+        class Son extends Father {
+            sum() {
+                console.log(super.sum() + 3);
+            }
+
+        }
+        var son = new Son();
+        son.sum(); */
+
+        /* class Father {
+            sum() {
+                this.x = x;
+            }
+        }
+        class Son extends Father {
+            sum() {
+                console.log(super.sum() + 3);
+            }
+
+        }
+        var son = new Son();
+        son.sum(); */
+
+        //
+        var that;
+        class Star {
+            constructor(uname, age){
+                // console.log(this); //指向实例对象
+                that = this;
+                this.uname = uname;
+                this.age = age;
+
+                this.btn = document.querySelector('button');
+                this.btn.onclick = this.sing;
+            }
+            sing(){
+                //sing方法里的this指向 btn这个按钮
+                console.log(this);
+                // console.log(this.uname);
+                console.log(that.uname); 
+            }
+            dance(){
+                console.log(this);
+            }
+        }
+        var person = new Star('anna');
+        person.dance(); //this指向 person 这个实例对象
+        // person.sing();
+    </script>
+</body>
+</html>

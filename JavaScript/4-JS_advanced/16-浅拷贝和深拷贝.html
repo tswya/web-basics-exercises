@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //浅拷贝
+        var obj = {
+            name: 'anna',
+            age: 20,
+            msg: {
+                age: 10    //msg只拷贝地址
+            }
+        }
+        var o = {}
+        for(var k in obj) {
+            o[k] = obj[k];
+        }
+        //es6方法
+        Object.assign(o, obj)
+
+        //深拷贝
+        function dpCopy(newObj, oldObj) {
+            for(var k in oldObj) {
+                var item = oldObj[k];
+                if(item instanceof Array) { //先写Array array也属于object，先写object数组会被当做对象处理
+                    newObj[k] = [];
+                    dpCopy(newObj[k], item)
+                } else if(item instanceof Object) {
+                    newObj[k] = {};
+                    dpCopy(newObj[k], item)
+                } else {
+                    newObj[k] = item;
+                }
+            }
+        }
+        dpCopy(o, obj);
+        console.log(o);
+    </script>
+</body>
+</html>
