@@ -1,0 +1,8 @@
+{
+    "name": "3init-tool",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "provide the function of HTML Escape, and time formatting",
+    "keywords": ["htmlEscape", "dateFormat"],
+    "license": "ISC"
+}

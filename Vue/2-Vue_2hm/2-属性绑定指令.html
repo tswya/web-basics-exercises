@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <div id="app">
+        <input type="text" v-bind:placeholder="tips">
+        <hr>
+        <img v-bind:src="photo">
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username: 'aa',
+                tips: '请输入用户名',
+                photo: 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAYGBgYHBgcICAcKCwoLCg8ODAwODxYQERAREBYiFRkVFRkVIh4kHhweJB42KiYmKjY+NDI0PkxERExfWl98fKcBBgYGBgcGBwgIBwoLCgsKDw4MDA4PFhAREBEQFiIVGRUVGRUiHiQeHB4kHjYqJiYqNj40MjQ+TERETF9aX3x8p//CABEIAEUARQMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYBAgQDBwj/2gAIAQEAAAAA/VIBoYZGCLof1AZhlbt1YnfeS1qvtLd8A0sUfxxM/mI7eWzZANwAAf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAKAgIQAxAAAAAAAAAAAAA//8QAMBAAAQQBAgQDBwQDAAAAAAAAAgEDBAURABIGEyFhFjFBEBQwVZKU0hUgInEzQ2L/2gAIAQEAAT8A+LlFVUynTz+Bd28emqZli+BmDAfxaBMm64S7QaD/AKMlQU1WRLXhefCn2crnJdGLduWVVtie5/hMPPDX+j6f29NeI+Hfndd901+WvEfDvzuu+6a/LTTrPE/EzbzLgO1VIeQMVEwfsTHzRU9I4L9ZatK2HaV0uBMa3sSWSacHsSYyndPRdUPEbLEZ2svbKK1Z158h8nXQa94HGW5I7l8nR14j4d+d133TX5ai3FRMdRqLZQ33NqlsafAywnrgV9hbdpbsbcLuz5Y9c6h0nA04CKHWUkgQXBKyyw5he+3T/DfB8Zk3pFNUNNBjc45HZAR/tVTVYNWMFlKxIyRP5cv3bZyvPrt2dPP2XEbhU3mDuGatXSHa0UtGdyoi+Qq5rwnwt8grPtWvx1Fh8J11kLMViqjTiHaLbYstvqhdcIg4L2W8d2VU2UZpBVx6G+2CF0TcYKKZ1UVL8GpGKs99XVaBFe2M7wUQQcDtbQVx3RdHw/ZeFK+oOxckyGpEAjkmjeUFh4HDUcjhcIPTci6/T3xgMxWrOS0Yeb4AxzD/ALRW1Dr2HUiDLdjsNN28tkgHBugDCm73Le2Q/Sian0cmZxDDm+8k2wzXq0WxGyJw+cJ7SRwC6YTzHGplXNfu62e3aPtMxwdFyMKN7HN+MZyKr6ddQaSQ1xDcWRyTFt6S0bTIo2okgxgaUiVQ3oWU9C+Hy++uX31y++uX31y++uX31y++uX31y+/wv//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQIBAT8AT//EABQRAQAAAAAAAAAAAAAAAAAAAED/2gAIAQMBAT8AT//Z',
+            }
+        });
+
+    </script>
+</body>
+</html>
