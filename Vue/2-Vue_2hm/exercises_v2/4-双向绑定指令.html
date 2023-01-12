@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="username">
+        <input type="text" :value="username">
+        <hr>
+        <!-- v-model的修饰符 -->
+        <input type="text" v-model.trim="username"><br>
+        <input type="text" v-model.number="n1"> + <input type="text" v-model.number="n2"> = <span>{{ n1 + n2 }}</span><br>
+        <input type="text" v-model.lazy="n3"><button @click="showName">Click</button>
+        <hr>
+        <select v-model="city">
+            <option value="">请选择城市</option>
+            <option value="1">北京</option>
+            <option value="2">深圳</option>
+            <option value="3">上海</option>
+            <option value="4">广州</option>
+        </select>
+    </div>
+
+    <script src="./lib/vue-2.6.12.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                username:'anna',
+                city: '',
+                n1: 2,
+                n2: 2,
+                n3:6
+            },
+            methods: {
+                showName() {
+                    // console.log("用户名为：" + `${this.username}`);
+                    console.log(`用户名为："${this.username}"`);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

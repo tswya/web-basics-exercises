@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/axios.js"></script>
+</head>
+<body>
+    <script>
+        // http://www.liulongbin.top:3006/api/getbooks
+        axios({
+            method: 'GET',
+            url: 'http://www.liulongbin.top:3006/api/getbooks',
+            //请求体数据 POST
+            /* data: {
+
+            }, */
+            //url中的查询参数 GET
+            params: {
+                id: 1,
+            }
+        }).then((result) => {
+            console.log(result.data); //服务器返回的真实数据
+        })
+    </script>
+</body>
+</html>
